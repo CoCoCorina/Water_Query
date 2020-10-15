@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/Home_Fragment"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="首页" />
+
+    <item
+        android:id="@+id/Business_Fragment"
+        android:icon="@drawable/ic_baseline_apps_24"
+        android:title="便民服务" />
+
+    <item
+        android:id="@+id/Feedback_Fragment"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="在线客服" />
+
+    <item
+        android:id="@+id/Videos_Fragment"
+        android:icon="@drawable/ic_baseline_ondemand_video_24"
+        android:title="视频专题" />
+
+    <item
+        android:id="@+id/Personal_Fragment"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="我的用水" />
+
+</menu>
