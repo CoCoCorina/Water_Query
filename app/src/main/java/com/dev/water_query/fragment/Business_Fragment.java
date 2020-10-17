@@ -15,21 +15,20 @@ import com.dev.water_query.R;
  */
 public class Business_Fragment extends Fragment {
 
-    public static Fragment newInstance() {
-        return new Business_Fragment();
-    }
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     public Business_Fragment() {
         // Required empty public constructor
+    }
+
+    public static Fragment newInstance() {
+        return new Business_Fragment();
     }
 
     /**
