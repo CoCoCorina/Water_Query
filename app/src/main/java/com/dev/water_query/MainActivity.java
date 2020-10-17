@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 .hide(fragments.get(1))
                 .hide(fragments.get(2))
                 .hide(fragments.get(3))
-                .hide(fragments.get(0))
+                .hide(fragments.get(4))
                 .commit();
 
         navigation.setOnNavigationItemSelectedListener((item) -> {
