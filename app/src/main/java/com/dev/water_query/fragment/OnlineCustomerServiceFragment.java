@@ -10,10 +10,10 @@ import com.dev.water_query.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Business_Fragment#newInstance} factory method to
+ * Use the {@link OnlineCustomerServiceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Business_Fragment extends Fragment {
+public class OnlineCustomerServiceFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,25 +23,17 @@ public class Business_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Business_Fragment() {
+    public OnlineCustomerServiceFragment() {
         // Required empty public constructor
     }
 
     public static Fragment newInstance() {
-        return new Business_Fragment();
+        return new OnlineCustomerServiceFragment();
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Business_Fragment.
-     */
     // TODO: Rename and change types and number of parameters
-    public static Business_Fragment newInstance(String param1, String param2) {
-        Business_Fragment fragment = new Business_Fragment();
+    public static OnlineCustomerServiceFragment newInstance(String param1, String param2) {
+        OnlineCustomerServiceFragment fragment = new OnlineCustomerServiceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,6 +54,6 @@ public class Business_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.business_fragment, container, false);
+        return inflater.inflate(R.layout.service_fragment, container, false);
     }
 }

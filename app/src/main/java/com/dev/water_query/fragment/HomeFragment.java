@@ -10,12 +10,12 @@ import com.dev.water_query.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Personal_Fragment#newInstance} factory method to
+ * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Personal_Fragment extends Fragment {
+public class HomeFragment extends Fragment {
     public static Fragment newInstance() {
-        return new Personal_Fragment();
+        return new HomeFragment();
     }
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class Personal_Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Personal_Fragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class Personal_Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Personal_Fragment.
+     * @return A new instance of fragment Home_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Personal_Fragment newInstance(String param1, String param2) {
-        Personal_Fragment fragment = new Personal_Fragment();
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class Personal_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.personal_fragment, container, false);
+        return inflater.inflate(R.layout.home_fragment, container, false);
     }
 }

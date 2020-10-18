@@ -1,4 +1,4 @@
-package com.dev.water_query;
+package com.dev.water_query.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -6,11 +6,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.dev.water_query.fragment.Business_Fragment;
-import com.dev.water_query.fragment.Feedback_Fragment;
-import com.dev.water_query.fragment.Home_Fragment;
-import com.dev.water_query.fragment.Personal_Fragment;
-import com.dev.water_query.fragment.Videos_Fragment;
+import com.dev.water_query.R;
+import com.dev.water_query.fragment.ServiceFragment;
+import com.dev.water_query.fragment.OnlineCustomerServiceFragment;
+import com.dev.water_query.fragment.HomeFragment;
+import com.dev.water_query.fragment.MeFragment;
+import com.dev.water_query.fragment.VideosFragment;
 
 import java.util.ArrayList;
 
@@ -22,18 +23,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(Home_Fragment.newInstance());
-        fragments.add(Business_Fragment.newInstance());
-        fragments.add(Feedback_Fragment.newInstance());
-        fragments.add(Videos_Fragment.newInstance());
-        fragments.add(Personal_Fragment.newInstance());
+        fragments.add(HomeFragment.newInstance());
+        fragments.add(ServiceFragment.newInstance());
+        fragments.add(OnlineCustomerServiceFragment.newInstance());
+        fragments.add(VideosFragment.newInstance());
+        fragments.add(MeFragment.newInstance());
         BottomNavigationView navigation = findViewById(R.id.navigation);
         FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().add(R.id.content, fragments.get(0), "Home_Fragment")
-                .add(R.id.content, fragments.get(1), "Business_Fragment")
-                .add(R.id.content, fragments.get(2), "Feedback_Fragment")
-                .add(R.id.content, fragments.get(3), "Videos_Fragment")
-                .add(R.id.content, fragments.get(4), "Personal_Fragment")
+        fm.beginTransaction().add(R.id.content, fragments.get(0), "HomeFragment")
+                .add(R.id.content, fragments.get(1), "ServiceFragment")
+                .add(R.id.content, fragments.get(2), "OnlineCustomerServiceFragment")
+                .add(R.id.content, fragments.get(3), "VideosFragment")
+                .add(R.id.content, fragments.get(4), "MeFragment")
                 .commit();
 
         fm.beginTransaction()
