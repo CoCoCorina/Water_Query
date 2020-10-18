@@ -10,12 +10,12 @@ import com.dev.water_query.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MeFragment#newInstance} factory method to
+ * Use the {@link PersonalFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MeFragment extends Fragment {
+public class PersonalFragment extends Fragment {
     public static Fragment newInstance() {
-        return new MeFragment();
+        return new PersonalFragment();
     }
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class MeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public MeFragment() {
+    public PersonalFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class MeFragment extends Fragment {
      * @return A new instance of fragment Personal_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MeFragment newInstance(String param1, String param2) {
-        MeFragment fragment = new MeFragment();
+    public static PersonalFragment newInstance(String param1, String param2) {
+        PersonalFragment fragment = new PersonalFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class MeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.me_fragment, container, false);
+        return inflater.inflate(R.layout.personal_fragment, container, false);
     }
 }

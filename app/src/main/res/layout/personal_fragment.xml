@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MeFragment">
+    tools:context=".fragment.PersonalFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -63,10 +63,10 @@
 
                     </LinearLayout>
 
-                    <ImageButton
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/ic_baseline_chevron_right_24" />
+                        android:background="@drawable/ic_baseline_chevron_right_24" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -80,7 +80,10 @@
                     android:id="@+id/q"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="#FFFFFF" />
+                    android:background="#FFFFFF"
+                    android:gravity="center_vertical"
+                    android:text="权威"
+                    android:textSize="35sp" />
 
                 <Button
                     android:id="@+id/w"
