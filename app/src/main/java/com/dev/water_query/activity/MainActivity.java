@@ -10,7 +10,7 @@ import com.dev.water_query.R;
 import com.dev.water_query.fragment.ServiceFragment;
 import com.dev.water_query.fragment.OnlineCustomerServiceFragment;
 import com.dev.water_query.fragment.HomeFragment;
-import com.dev.water_query.fragment.MeFragment;
+import com.dev.water_query.fragment.PersonalFragment;
 import com.dev.water_query.fragment.VideosFragment;
 
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(ServiceFragment.newInstance());
         fragments.add(OnlineCustomerServiceFragment.newInstance());
         fragments.add(VideosFragment.newInstance());
-        fragments.add(MeFragment.newInstance());
+        fragments.add(PersonalFragment.newInstance());
         BottomNavigationView navigation = findViewById(R.id.navigation);
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().add(R.id.content, fragments.get(0), "HomeFragment")
