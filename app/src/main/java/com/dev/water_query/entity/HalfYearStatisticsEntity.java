@@ -1,11 +1,11 @@
 package com.dev.water_query.entity;
 
 /**
-* @description: 半年信息统计
-* @date 2020/10/18 18:41
-*/
+ * @description: 半年信息统计
+ * @date 2020/10/18 18:41
+ */
 
-public class SixMonthsStatisticsEntity {
+public class HalfYearStatisticsEntity {
 
     /**
      * status : 200
