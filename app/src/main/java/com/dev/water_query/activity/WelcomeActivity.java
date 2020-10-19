@@ -58,14 +58,14 @@ public class WelcomeActivity extends AppCompatActivity {
                     String mSupplyNumber = mEdit_supplyNumber.getText().toString();
 
                     Boolean bool = SharedPreferencesUtil.setSupplyNumber(mSupplyNumber, WelcomeActivity.this);
-                    if (bool)
+                    if (bool) {
                         Toast.makeText(WelcomeActivity.this, "保存成功！", Toast.LENGTH_SHORT).show();
-                    else
+                        //跳转到主界面
+                        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                        finish();
+                    } else {
                         Toast.makeText(WelcomeActivity.this, "保存失败！", Toast.LENGTH_SHORT).show();
-
-                    //跳转到主界面
-                    startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-                    finish();
+                    }
                 }
             });
         } else {

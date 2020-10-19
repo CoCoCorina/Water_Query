@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,14 +31,14 @@ public class PersonalFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.personal_fragment, container, false);
 
-        mPersonalSupplyNumber=rootView.findViewById(R.id.personal_supply_number);
+        mPersonalSupplyNumber = rootView.findViewById(R.id.personal_supply_number);
         mProfilePhoto = rootView.findViewById(R.id.profile_photo);
 
         PersonalInfo();
         return rootView;
     }
 
-    private void PersonalInfo(){
+    private void PersonalInfo() {
         mPersonalSupplyNumber.setText(SharedPreferencesUtil.getSupplyNumber(getActivity()).toString());
         Picasso.with(getContext()).load(R.drawable.qwe).into(mProfilePhoto);
     }
