@@ -45,5 +45,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
     //图表
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
-
+    //图像处理
+    implementation 'com.squareup.picasso:picasso:2.5.2'
 }

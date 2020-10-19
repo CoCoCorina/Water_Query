@@ -5,62 +5,42 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.dev.water_query.R;
+import com.dev.water_query.utils.SharedPreferencesUtil;
+import com.squareup.picasso.Picasso;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link PersonalFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * @description: 个人信息界面
+ * @date 2020/10/19 10:47
  */
+
 public class PersonalFragment extends Fragment {
+
+    private TextView mPersonalSupplyNumber;
+    private ImageView mProfilePhoto;
+
     public static Fragment newInstance() {
         return new PersonalFragment();
-    }
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public PersonalFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Personal_Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PersonalFragment newInstance(String param1, String param2) {
-        PersonalFragment fragment = new PersonalFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.personal_fragment, container, false);
+        View rootView = inflater.inflate(R.layout.personal_fragment, container, false);
+
+        mPersonalSupplyNumber=rootView.findViewById(R.id.personal_supply_number);
+        mProfilePhoto = rootView.findViewById(R.id.profile_photo);
+
+        PersonalInfo();
+        return rootView;
+    }
+
+    private void PersonalInfo(){
+        mPersonalSupplyNumber.setText(SharedPreferencesUtil.getSupplyNumber(getActivity()).toString());
+        Picasso.with(getContext()).load(R.drawable.qwe).into(mProfilePhoto);
     }
 }
