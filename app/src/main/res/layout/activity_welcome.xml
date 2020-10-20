@@ -7,7 +7,7 @@
     tools:context=".activity.WelcomeActivity">
 
     <EditText
-        android:id="@+id/edit_supply_number"
+        android:id="@+id/edit_welcome_supply_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -17,7 +17,7 @@
         android:visibility="invisible" />
 
     <Button
-        android:id="@+id/submit_supply_number"
+        android:id="@+id/submit_welcome_supply_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="提交"
@@ -28,6 +28,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="欢迎界面"
-        android:textSize="60sp" />
+        android:textSize="60dp" />
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.dev.water_query.utils;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 /**
  * @description: 利用SharedPreferences本地存储水表号
@@ -10,7 +11,7 @@ import android.content.Context;
 public class SharedPreferencesUtil {
 
     private static android.content.SharedPreferences share(Context context) {
-        android.content.SharedPreferences sharedPreferences = context
+        SharedPreferences sharedPreferences = context
                 .getSharedPreferences("data", Context.MODE_PRIVATE);
         return sharedPreferences;
     }
