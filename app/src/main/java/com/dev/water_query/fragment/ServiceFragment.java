@@ -28,7 +28,6 @@ import java.util.ArrayList;
 public class ServiceFragment extends Fragment {
     private Context mContext;
     private GridView mGridViewService, mGridViewHandle, mGridViewTips;
-    private ArrayList<GridViewEntity> mGridViewServiceList = null, mGridViewHandleList = null, mGridViewTipsList = null;
 
     public ServiceFragment() {
     }
@@ -57,7 +56,7 @@ public class ServiceFragment extends Fragment {
     private void initData() {
         mContext = getActivity();
 
-        mGridViewServiceList = new ArrayList<GridViewEntity>();
+        ArrayList<GridViewEntity> mGridViewServiceList = new ArrayList<>();
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水费查询"));
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "我要交费"));
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "用水价格"));
@@ -68,7 +67,7 @@ public class ServiceFragment extends Fragment {
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "直饮水服务"));
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "供水服务热线"));
 
-        mGridViewHandleList = new ArrayList<GridViewEntity>();
+        ArrayList<GridViewEntity> mGridViewHandleList = new ArrayList<>();
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水表报装"));
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "户表改造"));
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "户表调价"));
@@ -77,7 +76,7 @@ public class ServiceFragment extends Fragment {
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "更名过户"));
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "互联网督查"));
 
-        mGridViewTipsList = new ArrayList<GridViewEntity>();
+        ArrayList<GridViewEntity> mGridViewTipsList = new ArrayList<>();
         mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "常见问题"));
         mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "法律法规"));
         mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "业务指南"));
