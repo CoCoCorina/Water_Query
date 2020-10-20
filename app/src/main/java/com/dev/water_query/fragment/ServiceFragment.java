@@ -28,9 +28,7 @@ import java.util.ArrayList;
 public class ServiceFragment extends Fragment {
     private Context mContext;
     private GridView mGridViewService, mGridViewHandle, mGridViewTips;
-    private ArrayList<GridViewEntity> mGridViewServiceList = null;
-    private ArrayList<GridViewEntity> mGridViewHandleList = null;
-    private ArrayList<GridViewEntity> mGridViewTipsList = null;
+    private ArrayList<GridViewEntity> mGridViewServiceList = null, mGridViewHandleList = null, mGridViewTipsList = null;
 
     public ServiceFragment() {
     }
