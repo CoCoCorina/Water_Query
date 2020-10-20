@@ -3,8 +3,8 @@ package com.dev.water_query.entity;
 import java.util.List;
 
 /**
- *@description: 运行数据
- *@date 2020/10/18 18:30
+ * @description: 运行数据
+ * @date 2020/10/18 18:30
  */
 
 public class RecordDataEntity {
@@ -37,15 +37,24 @@ public class RecordDataEntity {
          * timeU : 23863
          */
 
+        //累计流量
         private String accumuFlowDaily;
+        //基本信息id
         private int baseInfoId;
+        //电池等级
         private String batterylevel;
+        //检验和
         private String checksum;
+        //设备id
         private String deviceId;
+        //事件时间
         private String eventTime;
+        //id
         private int id;
         private String manuID;
-        private ReceiveTimeBean receiveTime;
+        //接受时间
+        private TimeBean receiveTime;
+        //串号
         private String serialNum;
         private String temp;
         private String timeD;
@@ -115,11 +124,11 @@ public class RecordDataEntity {
             this.manuID = manuID;
         }
 
-        public ReceiveTimeBean getReceiveTime() {
+        public TimeBean getReceiveTime() {
             return receiveTime;
         }
 
-        public void setReceiveTime(ReceiveTimeBean receiveTime) {
+        public void setReceiveTime(TimeBean receiveTime) {
             this.receiveTime = receiveTime;
         }
 
@@ -153,102 +162,6 @@ public class RecordDataEntity {
 
         public void setTimeU(String timeU) {
             this.timeU = timeU;
-        }
-
-        public static class ReceiveTimeBean {
-            /**
-             * date : 22
-             * day : 0
-             * hours : 11
-             * minutes : 54
-             * month : 11
-             * seconds : 40
-             * time : 1576986880000
-             * timezoneOffset : -480
-             * year : 119
-             */
-
-            private int date;
-            private int day;
-            private int hours;
-            private int minutes;
-            private int month;
-            private int seconds;
-            private long time;
-            private int timezoneOffset;
-            private int year;
-
-            public int getDate() {
-                return date;
-            }
-
-            public void setDate(int date) {
-                this.date = date;
-            }
-
-            public int getDay() {
-                return day;
-            }
-
-            public void setDay(int day) {
-                this.day = day;
-            }
-
-            public int getHours() {
-                return hours;
-            }
-
-            public void setHours(int hours) {
-                this.hours = hours;
-            }
-
-            public int getMinutes() {
-                return minutes;
-            }
-
-            public void setMinutes(int minutes) {
-                this.minutes = minutes;
-            }
-
-            public int getMonth() {
-                return month;
-            }
-
-            public void setMonth(int month) {
-                this.month = month;
-            }
-
-            public int getSeconds() {
-                return seconds;
-            }
-
-            public void setSeconds(int seconds) {
-                this.seconds = seconds;
-            }
-
-            public long getTime() {
-                return time;
-            }
-
-            public void setTime(long time) {
-                this.time = time;
-            }
-
-            public int getTimezoneOffset() {
-                return timezoneOffset;
-            }
-
-            public void setTimezoneOffset(int timezoneOffset) {
-                this.timezoneOffset = timezoneOffset;
-            }
-
-            public int getYear() {
-                return year;
-            }
-
-            public void setYear(int year) {
-                this.year = year;
-            }
         }
     }
 }
