@@ -61,7 +61,7 @@ public class PayInfoEntity {
         //微信用
         private String openId;
         //支付时间
-        private TimeBean payTime;
+        private DateTimeEntitiy payTime;
         //手机号
         private String phoneNumber;
         //水号
@@ -111,11 +111,11 @@ public class PayInfoEntity {
             this.openId = openId;
         }
 
-        public TimeBean getPayTime() {
+        public DateTimeEntitiy getPayTime() {
             return payTime;
         }
 
-        public void setPayTime(TimeBean payTime) {
+        public void setPayTime(DateTimeEntitiy payTime) {
             this.payTime = payTime;
         }
 

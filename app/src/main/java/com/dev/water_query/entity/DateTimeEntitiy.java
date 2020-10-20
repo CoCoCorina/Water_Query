@@ -17,7 +17,7 @@ import java.util.Date;
  * @author: Juston
  * @date: 2020/10/20 16:16
  */
-public class TimeBean {
+public class DateTimeEntitiy {
     /**
      * date : 17
      * day : 2
@@ -82,8 +82,8 @@ public class TimeBean {
     public int getMinutes() {
         try {
             Date date = DateConvertUtil.timeStampToDate(time);
-            String yearStr = DateConvertUtil.getDateTimeString(date).substring(14, 16);
-            return Integer.parseInt(yearStr);
+            String minutesStr = DateConvertUtil.getDateTimeString(date).substring(14, 16);
+            return Integer.parseInt(minutesStr);
         } catch (ParseException e) {
             Log.d("WaterQuery", "setTime Error Msg :" + e.getMessage());
         }
@@ -97,8 +97,8 @@ public class TimeBean {
     public int getMonth() {
         try {
             Date date = DateConvertUtil.timeStampToDate(time);
-            String yearStr = DateConvertUtil.getDateTimeString(date).substring(5, 7);
-            return Integer.parseInt(yearStr);
+            String monthStr = DateConvertUtil.getDateTimeString(date).substring(5, 7);
+            return Integer.parseInt(monthStr);
         } catch (ParseException e) {
             Log.d("WaterQuery", "setTime Error Msg :" + e.getMessage());
         }
@@ -112,8 +112,8 @@ public class TimeBean {
     public int getSeconds() {
         try {
             Date date = DateConvertUtil.timeStampToDate(time);
-            String yearStr = DateConvertUtil.getDateTimeString(date).substring(17, 19);
-            return Integer.parseInt(yearStr);
+            String secondsStr = DateConvertUtil.getDateTimeString(date).substring(17, 19);
+            return Integer.parseInt(secondsStr);
         } catch (ParseException e) {
             Log.d("WaterQuery", "setTime Error Msg :" + e.getMessage());
         }

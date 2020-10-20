@@ -1,30 +1,21 @@
 package com.dev.water_query.activity;
 
 import android.os.Bundle;
-import android.support.annotation.LongDef;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import com.dev.water_query.R;
 import com.dev.water_query.adapter.ViewPagerAdapter;
-import com.dev.water_query.entity.TimeBean;
 import com.dev.water_query.fragment.ServiceFragment;
 import com.dev.water_query.fragment.OnlineCustomerServiceFragment;
 import com.dev.water_query.fragment.HomeFragment;
 import com.dev.water_query.fragment.PersonalFragment;
 import com.dev.water_query.fragment.VideosFragment;
 
-import java.lang.reflect.Array;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**

@@ -23,7 +23,6 @@ import com.dev.water_query.utils.SharedPreferencesUtil;
  * @date: 2020/10/20 11:09
  */
 
-
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText mEditSupplyNumber;

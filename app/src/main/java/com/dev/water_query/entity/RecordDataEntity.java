@@ -53,7 +53,7 @@ public class RecordDataEntity {
         private int id;
         private String manuID;
         //接受时间
-        private TimeBean receiveTime;
+        private DateTimeEntitiy receiveTime;
         //串号
         private String serialNum;
         private String temp;
@@ -124,11 +124,11 @@ public class RecordDataEntity {
             this.manuID = manuID;
         }
 
-        public TimeBean getReceiveTime() {
+        public DateTimeEntitiy getReceiveTime() {
             return receiveTime;
         }
 
-        public void setReceiveTime(TimeBean receiveTime) {
+        public void setReceiveTime(DateTimeEntitiy receiveTime) {
             this.receiveTime = receiveTime;
         }
 
