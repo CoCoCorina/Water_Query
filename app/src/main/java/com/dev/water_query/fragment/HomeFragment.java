@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import com.dev.water_query.R;
 
 public class HomeFragment extends Fragment {
-    public static Fragment newInstance() {
-        return new HomeFragment();
+    public HomeFragment() {
     }
 
-
-    public HomeFragment() {
+    public static Fragment newInstance() {
+        return new HomeFragment();
     }
 
     public static HomeFragment newInstance(String param1, String param2) {
