@@ -1,12 +1,11 @@
 package com.dev.water_query.entity;
 
-import android.support.annotation.LongDef;
+import androidx.annotation.LongDef;
 import android.util.Log;
 
 import com.dev.water_query.utils.DateConvertUtil;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**

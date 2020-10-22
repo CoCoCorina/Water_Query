@@ -23,47 +23,49 @@
             android:layout_height="40dp"
             android:orientation="horizontal">
 
-            <Button
+            <TextView
+                android:id="@+id/btn_live"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#F6F6F6"
-                android:text="水务直播" />
+                android:gravity="center"
+                android:text="水务直播"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
-            <Button
+            <TextView
+                android:id="@+id/btn_tips"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#F6F6F6"
-                android:text="用水常识" />
+                android:gravity="center"
+                android:text="用水常识"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
-            <Button
+            <TextView
+                android:id="@+id/btn_culture"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="#F6F6F6"
-                android:text="品牌文化" />
+                android:gravity="center"
+                android:text="品牌文化"
+                android:textColor="#000000"
+                android:textSize="20dp" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_video_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFFF">
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#123FFF" />
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/vp_video"
-                android:background="#123FFF"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp" >
-
-
-
-            </android.support.v4.view.ViewPager>
-
-        </LinearLayout>
     </LinearLayout>
 </FrameLayout>

@@ -72,7 +72,7 @@
                 android:layout_marginRight="20dp"
                 android:background="#FFFFFF">
 
-                <android.support.v4.view.ViewPager
+                <androidx.viewpager.widget.ViewPager
                     android:id="@+id/vp_home_img_content"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -165,7 +165,7 @@
                     android:layout_height="3dp"
                     android:background="#00BCD4" />
 
-                <android.support.v4.view.ViewPager
+                <androidx.viewpager.widget.ViewPager
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginBottom="10dp"

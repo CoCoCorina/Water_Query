@@ -1,20 +1,17 @@
 package com.dev.water_query.fragment;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dev.water_query.R;
 import com.dev.water_query.adapter.GridViewAdapter;
 import com.dev.water_query.adapter.ImagePagerAdapter;
-import com.dev.water_query.adapter.NoticeAdapter;
 import com.dev.water_query.adapter.ViewPagerAdapter;
 import com.dev.water_query.entity.GridViewEntity;
 import com.dev.water_query.entity.NoticeEntity;
