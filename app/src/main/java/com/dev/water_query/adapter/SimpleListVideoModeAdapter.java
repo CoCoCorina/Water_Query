@@ -7,19 +7,28 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import com.dev.water_query.R;
-import com.dev.water_query.entity.VideoModel;
-import com.dev.water_query.utils.SampleCoverVideo;
+import com.dev.water_query.entity.VideoEntity;
+import com.dev.water_query.utils.SampleCoverVideoUtil;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @version: v1.0
+ * @ClassName: SimpleListVideoModeAdapter
+ * @Package: com.dev.water_query.adapter
+ * @Description: 视频适配器
+ * @author: Corina
+ * @date: 2020/10/22 13:17
+ */
 public class SimpleListVideoModeAdapter extends BaseAdapter {
 
     public static final String TAG = "ListNormalAdapter22";
 
-    private List<VideoModel> list = new ArrayList<>();
+    private List<VideoEntity> list = new ArrayList<>();
     private LayoutInflater inflater;
     private Context context;
 
@@ -36,7 +45,7 @@ public class SimpleListVideoModeAdapter extends BaseAdapter {
         this.context = context;
         inflater = LayoutInflater.from(context);
         for (int i = 0; i < 40; i++) {
-            list.add(new VideoModel());
+            list.add(new VideoEntity());
         }
 
     }
@@ -62,7 +71,7 @@ public class SimpleListVideoModeAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.list_video_simple_mode1, null);
-            holder.gsyVideoPlayer = (SampleCoverVideo) convertView.findViewById(R.id.video_item_player);
+            holder.gsyVideoPlayer = (SampleCoverVideoUtil) convertView.findViewById(R.id.video_item_player);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -108,7 +117,7 @@ public class SimpleListVideoModeAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        SampleCoverVideo gsyVideoPlayer;
+        SampleCoverVideoUtil gsyVideoPlayer;
     }
 
 }
