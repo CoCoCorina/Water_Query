@@ -26,6 +26,7 @@ import java.util.ArrayList;
  * @date: 2020/10/20 16:29
  */
 public class ServiceFragment extends Fragment {
+    private View mRootView;
     private Context mContext;
     private GridView mGridViewService, mGridViewHandle, mGridViewTips;
 
@@ -44,13 +45,19 @@ public class ServiceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.service_fragment, container, false);
-        mGridViewService = rootView.findViewById(R.id.service_gridview_service);
-        mGridViewHandle = rootView.findViewById(R.id.service_gridview_handle);
-        mGridViewTips = rootView.findViewById(R.id.service_gridview_tips);
+        mRootView = inflater.inflate(R.layout.service_fragment, container, false);
+
+        initView(inflater,container);
         initData();
         setListener();
-        return rootView;
+
+        return mRootView;
+    }
+
+    private void initView(LayoutInflater inflater, ViewGroup container) {
+        mGridViewService = mRootView.findViewById(R.id.service_gridview_service);
+        mGridViewHandle = mRootView.findViewById(R.id.service_gridview_handle);
+        mGridViewTips = mRootView.findViewById(R.id.service_gridview_tips);
     }
 
     private void initData() {

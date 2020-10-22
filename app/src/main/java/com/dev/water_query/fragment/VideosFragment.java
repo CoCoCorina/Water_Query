@@ -42,9 +42,9 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
 
     private void initData() {
         mListVideoFragments = new ArrayList<Fragment>();
-        mListVideoFragments.add(new NoticeFragment(mListVideoEntities1, getActivity()));
-        mListVideoFragments.add(new NoticeFragment(mListVideoEntities2, getActivity()));
-        mListVideoFragments.add(new NoticeFragment(mListVideoEntities3, getActivity()));
+        mListVideoFragments.add(new VideoListFragment(mListVideoEntities1,getActivity()));
+        mListVideoFragments.add(new VideoListFragment(mListVideoEntities2, getActivity()));
+        mListVideoFragments.add(new VideoListFragment(mListVideoEntities3, getActivity()));
     }
 
     private void initView(LayoutInflater inflater, ViewGroup container) {
@@ -92,7 +92,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_home_notice_1:
+            case R.id.btn_live:
                 mBtnLive.setTextColor(0xFFFFFFFF);
                 mBtnLive.setBackgroundColor(0xFF00BCD4);
 
@@ -104,7 +104,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
                 //跳转到对应的fragment
                 mVpVideoContent.setCurrentItem(0);
                 break;
-            case R.id.btn_home_notice_2:
+            case R.id.btn_tips:
                 mBtnTips.setTextColor(0xFFFFFFFF);
                 mBtnTips.setBackgroundColor(0xFF00BCD4);
 
@@ -116,7 +116,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
                 //跳转到对应的fragment
                 mVpVideoContent.setCurrentItem(1);
                 break;
-            case R.id.btn_home_notice_3:
+            case R.id.btn_culture:
                 mBtnCulture.setTextColor(0xFFFFFFFF);
                 mBtnCulture.setBackgroundColor(0xFF00BCD4);
 
