@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.dev.water_query.R;
 import com.dev.water_query.adapter.GridViewAdapter;
 import com.dev.water_query.adapter.ImagePagerAdapter;
+import com.dev.water_query.adapter.NoticeAdapter;
 import com.dev.water_query.adapter.ViewPagerAdapter;
 import com.dev.water_query.entity.GridViewEntity;
 import com.dev.water_query.entity.NoticeEntity;
