@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <com.dev.water_query.utils.SampleCoverVideoUtil
+    <com.dev.water_query.utils.VideoCoverUtil
         android:id="@+id/video_item_player"
         android:layout_width="match_parent"
         android:layout_height="200dp"

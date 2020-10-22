@@ -15,6 +15,14 @@ import com.dev.water_query.entity.NoticeEntity;
 
 import java.util.ArrayList;
 
+/**
+ * @version: v1.0
+ * @ClassName: VideosFragment
+ * @Package: com.dev.water_query.fragment
+ * @Description: 视频页
+ * @author: Corina
+ * @date: 2020/10/22 20:35
+ */
 public class VideosFragment extends Fragment implements View.OnClickListener {
 
     private View mRootView;

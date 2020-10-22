@@ -22,13 +22,13 @@ import com.shuyu.gsyvideoplayer.video.base.GSYBaseVideoPlayer;
 
 /**
  * @version: v1.0
- * @ClassName: SampleCoverVideo
+ * @ClassName: VideoCoverUtil
  * @Package: com.dev.water_query.utils
  * @Description: 视频工具类
  * @author: Corina
  * @date: 2020/10/22 13:17
  */
-public class SampleCoverVideoUtil extends StandardGSYVideoPlayer {
+public class VideoCoverUtil extends StandardGSYVideoPlayer {
 
     ImageView mCoverImage;
 
@@ -38,15 +38,15 @@ public class SampleCoverVideoUtil extends StandardGSYVideoPlayer {
 
     int mDefaultRes;
 
-    public SampleCoverVideoUtil(Context context, Boolean fullFlag) {
+    public VideoCoverUtil(Context context, Boolean fullFlag) {
         super(context, fullFlag);
     }
 
-    public SampleCoverVideoUtil(Context context) {
+    public VideoCoverUtil(Context context) {
         super(context);
     }
 
-    public SampleCoverVideoUtil(Context context, AttributeSet attrs) {
+    public VideoCoverUtil(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -89,11 +89,11 @@ public class SampleCoverVideoUtil extends StandardGSYVideoPlayer {
     @Override
     public GSYBaseVideoPlayer startWindowFullscreen(Context context, boolean actionBar, boolean statusBar) {
         GSYBaseVideoPlayer gsyBaseVideoPlayer = super.startWindowFullscreen(context, actionBar, statusBar);
-        SampleCoverVideoUtil sampleCoverVideoUtil = (SampleCoverVideoUtil) gsyBaseVideoPlayer;
+        VideoCoverUtil videoCoverUtil = (VideoCoverUtil) gsyBaseVideoPlayer;
         if(mCoverOriginUrl != null) {
-            sampleCoverVideoUtil.loadCoverImage(mCoverOriginUrl, mDefaultRes);
+            videoCoverUtil.loadCoverImage(mCoverOriginUrl, mDefaultRes);
         } else  if(mCoverOriginId != 0) {
-            sampleCoverVideoUtil.loadCoverImageBy(mCoverOriginId, mDefaultRes);
+            videoCoverUtil.loadCoverImageBy(mCoverOriginId, mDefaultRes);
         }
         return gsyBaseVideoPlayer;
     }
@@ -102,17 +102,17 @@ public class SampleCoverVideoUtil extends StandardGSYVideoPlayer {
     @Override
     public GSYBaseVideoPlayer showSmallVideo(Point size, boolean actionBar, boolean statusBar) {
         //下面这里替换成你自己的强制转化
-        SampleCoverVideoUtil sampleCoverVideoUtil = (SampleCoverVideoUtil) super.showSmallVideo(size, actionBar, statusBar);
-        sampleCoverVideoUtil.mStartButton.setVisibility(GONE);
-        sampleCoverVideoUtil.mStartButton = null;
-        return sampleCoverVideoUtil;
+        VideoCoverUtil videoCoverUtil = (VideoCoverUtil) super.showSmallVideo(size, actionBar, statusBar);
+        videoCoverUtil.mStartButton.setVisibility(GONE);
+        videoCoverUtil.mStartButton = null;
+        return videoCoverUtil;
     }
 
     @Override
     protected void cloneParams(GSYBaseVideoPlayer from, GSYBaseVideoPlayer to) {
         super.cloneParams(from, to);
-        SampleCoverVideoUtil sf = (SampleCoverVideoUtil) from;
-        SampleCoverVideoUtil st = (SampleCoverVideoUtil) to;
+        VideoCoverUtil sf = (VideoCoverUtil) from;
+        VideoCoverUtil st = (VideoCoverUtil) to;
         st.mShowFullAnimation = sf.mShowFullAnimation;
     }
 
@@ -145,7 +145,7 @@ public class SampleCoverVideoUtil extends StandardGSYVideoPlayer {
         final View oldF = vp.findViewById(getFullId());
         if (oldF != null) {
             //此处fix bug#265，推出全屏的时候，虚拟按键问题
-            SampleCoverVideoUtil gsyVideoPlayer = (SampleCoverVideoUtil) oldF;
+            VideoCoverUtil gsyVideoPlayer = (VideoCoverUtil) oldF;
             gsyVideoPlayer.mIfCurrentIsFullscreen = false;
         }
 

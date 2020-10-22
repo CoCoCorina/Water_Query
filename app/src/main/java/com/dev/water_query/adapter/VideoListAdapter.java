@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 
 import com.dev.water_query.R;
 import com.dev.water_query.entity.VideoEntity;
-import com.dev.water_query.utils.SampleCoverVideoUtil;
+import com.dev.water_query.utils.VideoCoverUtil;
 import com.shuyu.gsyvideoplayer.utils.OrientationUtils;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 
@@ -18,13 +18,13 @@ import java.util.List;
 
 /**
  * @version: v1.0
- * @ClassName: SimpleListVideoModeAdapter
+ * @ClassName: VideoListAdapter
  * @Package: com.dev.water_query.adapter
  * @Description: 视频适配器
  * @author: Corina
  * @date: 2020/10/22 13:17
  */
-public class SimpleListVideoModeAdapter extends BaseAdapter {
+public class VideoListAdapter extends BaseAdapter {
 
     public static final String TAG = "ListNormalAdapter22";
 
@@ -40,7 +40,7 @@ public class SimpleListVideoModeAdapter extends BaseAdapter {
 
     protected boolean isFull;
 
-    public SimpleListVideoModeAdapter(Context context) {
+    public VideoListAdapter(Context context) {
         super();
         this.context = context;
         inflater = LayoutInflater.from(context);
@@ -71,7 +71,7 @@ public class SimpleListVideoModeAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.list_video_simple_mode1, null);
-            holder.gsyVideoPlayer = (SampleCoverVideoUtil) convertView.findViewById(R.id.video_item_player);
+            holder.gsyVideoPlayer = (VideoCoverUtil) convertView.findViewById(R.id.video_item_player);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -117,7 +117,7 @@ public class SimpleListVideoModeAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-        SampleCoverVideoUtil gsyVideoPlayer;
+        VideoCoverUtil gsyVideoPlayer;
     }
 
 }

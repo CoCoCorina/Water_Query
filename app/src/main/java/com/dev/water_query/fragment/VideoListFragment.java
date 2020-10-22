@@ -12,18 +12,25 @@ import android.widget.AbsListView;
 import android.widget.ListView;
 
 import com.dev.water_query.R;
-import com.dev.water_query.adapter.SimpleListVideoModeAdapter;
+import com.dev.water_query.adapter.VideoListAdapter;
 import com.dev.water_query.entity.NoticeEntity;
 import com.shuyu.gsyvideoplayer.GSYVideoManager;
 
 import java.util.ArrayList;
 
-
+/**
+ * @version: v1.0
+ * @ClassName: VideoListFragment
+ * @Package: com.dev.water_query.fragment
+ * @Description: 视频展示 碎片
+ * @author: Corina
+ * @date: 2020/10/22 20:36
+ */
 public class VideoListFragment extends Fragment {
 
     private View mRootView;
     ListView videoList;
-    SimpleListVideoModeAdapter listNormalAdapter;
+    VideoListAdapter listNormalAdapter;
 
     public VideoListFragment() {
 
@@ -47,7 +54,7 @@ public class VideoListFragment extends Fragment {
 
 
     private void initData() {
-        listNormalAdapter = new SimpleListVideoModeAdapter(getContext());
+        listNormalAdapter = new VideoListAdapter(getContext());
         videoList.setAdapter(listNormalAdapter);
     }
 
@@ -69,7 +76,7 @@ public class VideoListFragment extends Fragment {
                     //当前播放的位置
                     int position = GSYVideoManager.instance().getPlayPosition();
                     //对应的播放列表TAG
-                    if (GSYVideoManager.instance().getPlayTag().equals(SimpleListVideoModeAdapter.TAG)
+                    if (GSYVideoManager.instance().getPlayTag().equals(VideoListAdapter.TAG)
                             && (position < firstVisibleItem || position > lastVisibleItem)) {
                         if(GSYVideoManager.isFullState(getActivity())) {
                             return;
