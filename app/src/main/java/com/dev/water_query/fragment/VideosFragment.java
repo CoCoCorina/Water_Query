@@ -13,23 +13,11 @@ public class VideosFragment extends Fragment {
         return new VideosFragment();
     }
 
-
-    public VideosFragment() {
-    }
-
-    public static VideosFragment newInstance(String param1, String param2) {
-        VideosFragment fragment = new VideosFragment();
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.videos_fragment, container, false);
+        View rootView= inflater.inflate(R.layout.videos_fragment, container, false);
+
+        return rootView;
     }
 }

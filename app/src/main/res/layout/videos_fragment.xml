@@ -5,11 +5,65 @@
     android:layout_height="match_parent"
     tools:context=".fragment.VideosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Video"
-        android:textSize="70dp" />
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#3F8D9B"
+            android:gravity="center"
+            android:text="视频专题"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F6F6F6"
+                android:text="水务直播" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F6F6F6"
+                android:text="用水常识" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#F6F6F6"
+                android:text="品牌文化" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vp_video"
+                android:background="#123FFF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp" >
+
+
+
+            </android.support.v4.view.ViewPager>
+
+        </LinearLayout>
+    </LinearLayout>
 </FrameLayout>
