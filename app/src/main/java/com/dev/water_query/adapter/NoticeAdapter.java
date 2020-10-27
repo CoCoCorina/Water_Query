@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class NoticeAdapter extends BaseAdapter {
     //通知实体集合
     private ArrayList<NoticeEntity> mListNoticeEntities;
-    //上下文你
+    //上下文
     private Context mContext;
 
     public NoticeAdapter(Context context, ArrayList<NoticeEntity> list) {

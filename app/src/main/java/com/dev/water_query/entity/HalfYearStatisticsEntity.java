@@ -180,12 +180,22 @@ public class HalfYearStatisticsEntity {
             String[] arr = str.split(",");
             mDate = arr[0];
             mPrice = Float.parseFloat(arr[1]);
-            mMonthAccumulativeWater = Float.parseFloat(arr[2]);
-            mTotalPrice = Float.parseFloat(arr[3]);
+            mLeftWater = Float.parseFloat(arr[2]);
+            mMonthAccumulativeWater = Float.parseFloat(arr[3]);
+            mTotalPrice = Float.parseFloat(arr[4]);
+            mRecordDate = arr[5];
         }
 
-        private String mDate;
-        private float mPrice, mMonthAccumulativeWater, mTotalPrice;
+        private String mDate, mRecordDate;
+        private float mPrice, mMonthAccumulativeWater, mTotalPrice, mLeftWater;
+
+        public String getRecordDate() {
+            return mRecordDate;
+        }
+
+        public float getLeftWater() {
+            return mLeftWater;
+        }
 
         public float getMonthAccumulativeWater() {
             return mMonthAccumulativeWater;
