@@ -171,7 +171,11 @@ public class HalfYearStatisticsEntity {
         mListMonthRecord.add(new MonthRecord(monthlySt5));
     }
 
-    private static class MonthRecord {
+    public ArrayList<MonthRecord> getListMonthRecord() {
+        return mListMonthRecord;
+    }
+
+    public static class MonthRecord {
         public MonthRecord(String str) {
             String[] arr = str.split(",");
             mDate = arr[0];

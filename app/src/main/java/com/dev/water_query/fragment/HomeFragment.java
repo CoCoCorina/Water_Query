@@ -1,15 +1,21 @@
 package com.dev.water_query.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dev.water_query.R;
+import com.dev.water_query.activity.BillDetailsActivity;
 import com.dev.water_query.adapter.GridViewAdapter;
 import com.dev.water_query.adapter.ImagePagerAdapter;
 import com.dev.water_query.adapter.ViewPagerAdapter;
@@ -95,6 +101,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         mAdapterNoticePager = new ViewPagerAdapter(mListNoticeFragments, getActivity().getSupportFragmentManager());
         mVpNoticeContent.setAdapter(mAdapterNoticePager);
+        mVpNoticeContent.setOffscreenPageLimit(3);
     }
 
     public void initData() {
@@ -167,6 +174,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             @Override
             public void onPageScrollStateChanged(int i) {
 
+            }
+        });
+
+        mGridViewService.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        startActivity(new Intent(getActivity(), BillDetailsActivity.class));
+                        break;
+                    default:
+                        Toast.makeText(getActivity(), "hello service item " + position, Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
         });
     }
