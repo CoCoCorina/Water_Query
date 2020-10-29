@@ -15,7 +15,6 @@ public class OkHttp3UtilTest {
 
         HalfYearStatisticsEntity halfYearStatisticsEntity = new Gson().fromJson(qwe, HalfYearStatisticsEntity.class);
         Log.d("12312321", halfYearStatisticsEntity.getMonthlySt5());
-        Log.d("13312321", "2019-02,4.2,163.6,81.5,34.44,2019-06-24");
         System.out.printf(qwe);
 
     }
