@@ -41,6 +41,7 @@ public class NoticeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("onCreate");
     }
 
     @Override
@@ -51,7 +52,7 @@ public class NoticeFragment extends Fragment {
 
         initView();
         setListener();
-
+        System.out.println("onCreateView");
         return mRootView;
     }
 

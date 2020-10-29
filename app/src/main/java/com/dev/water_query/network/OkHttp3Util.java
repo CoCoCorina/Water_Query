@@ -1,7 +1,12 @@
 package com.dev.water_query.network;
 
-import java.io.IOException;
+import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
+
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -20,6 +25,7 @@ public class OkHttp3Util {
 
     /**
      * get请求
+     *
      * @param url
      * @return result
      */
@@ -60,5 +66,43 @@ public class OkHttp3Util {
             e.printStackTrace();
         }
         return result;
+    }
+
+    /**
+     * @param url      请求的地址
+     * @param cls      要转换为的类的class对象
+     * @param callBack 请求完成回调函数
+     * @return 无
+     * @method serializeObjectFromHttpGet
+     * @description 通过httpGet请求直接反序列化为对应类的对象
+     * @date: 2020/10/29 15:15
+     * @author: Juston
+     */
+    public static void deserializeObjectFromHttpGet(String url, Class<?> cls, CallBack<?> callBack) {
+        //构建请求 get方式
+        OkHttpClient httpClient = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(url)
+                .get()
+                .build();
+
+        //开始请求
+        httpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                callBack.onFailure(e.getMessage());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    callBack.onFailure(response.message());
+                } else {
+                    String resStr = response.body().string();
+                    System.out.println(resStr);
+                    callBack.onSuccess(new Gson().fromJson(resStr, (Type) cls));
+                }
+            }
+        });
     }
 }

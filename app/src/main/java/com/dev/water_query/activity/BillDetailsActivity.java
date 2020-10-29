@@ -1,14 +1,20 @@
 package com.dev.water_query.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.dev.water_query.R;
 import com.dev.water_query.adapter.BillDetailAdapter;
 import com.dev.water_query.entity.HalfYearStatisticsEntity;
+import com.dev.water_query.network.CallBack;
+import com.dev.water_query.network.OkHttp3Util;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.BarData;
@@ -20,28 +26,37 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BillDetailsActivity extends AppCompatActivity {
+    private static final int HANDLER_SUCCESS = 0, HANDLER_FAILURE = 1;
+
     private ListView mListViewBillDetails;
     private BarChart mBarChartUseWater;
     private BillDetailAdapter mAdapterBillDetail;
 
-    private HalfYearStatisticsEntity mHalfUseWaterRecord;
+    private volatile HalfYearStatisticsEntity mHalfUseWaterRecord;
     private ArrayList<IBarDataSet> mDataSets;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(@NonNull Message msg) {
+            if (msg.what == HANDLER_FAILURE) {
+                Toast.makeText(BillDetailsActivity.this, "error :" + msg.obj.toString(), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            showData();
+            initView();
+            setListener();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill_details);
 
-        initData();
-        initView();
-        setListener();
+        getDataInInternet();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
+    //initView
     private void initView() {
         mListViewBillDetails = findViewById(R.id.listview_bill_details);
         mBarChartUseWater = findViewById(R.id.chart_bill_use_water);
@@ -55,22 +70,12 @@ public class BillDetailsActivity extends AppCompatActivity {
         //将dataset交给data
         mBarChartUseWater.setData(new BarData(mDataSets));
 
-
         //初始化账单详情
         mAdapterBillDetail = new BillDetailAdapter(this, mHalfUseWaterRecord.getListMonthRecord());
         mListViewBillDetails.setAdapter(mAdapterBillDetail);
     }
 
-    private void initData() {
-        //初始化实体
-        mHalfUseWaterRecord = new HalfYearStatisticsEntity();
-        mHalfUseWaterRecord.setMonthlySt0("2019-02,4.2,163.6,81.5,34.44,2019-06-24");
-        mHalfUseWaterRecord.setMonthlySt1("2019-03,4.2,122.96,12.9,32.11,2019-06-24");
-        mHalfUseWaterRecord.setMonthlySt2("2019-04,4.2,53.96,83.2,89.24,2019-06-24");
-        mHalfUseWaterRecord.setMonthlySt3("2019-05,4.2,23.156,65.1,68.09,2019-06-24");
-        mHalfUseWaterRecord.setMonthlySt4("2019-08,4.2,201.56,48.3,54.34,2019-06-24");
-        mHalfUseWaterRecord.setMonthlySt5("2019-10,4.2,131.1,98.7,14.54,2019-06-24");
-
+    private void showData() {
         //初始化数据集
         ArrayList<BarEntry> values = new ArrayList<>();
         int i = 0;
@@ -86,4 +91,22 @@ public class BillDetailsActivity extends AppCompatActivity {
     private void setListener() {
     }
 
+    private void getDataInInternet() {
+        String url = "http://zn.qlnuqianyun.cn/qlnuznsb/jsonTest/getInfoBySupplyNum.shtml?supplyNum=FYCJ001&flag=0";
+        OkHttp3Util.deserializeObjectFromHttpGet(url, HalfYearStatisticsEntity.class, new CallBack<HalfYearStatisticsEntity>() {
+            @Override
+            public void onFailure(String errorMsg) {
+                Message msg = new Message();
+                msg.what = HANDLER_FAILURE;
+                msg.obj = errorMsg;
+                handler.sendMessage(msg);
+            }
+
+            @Override
+            public void onSuccess(HalfYearStatisticsEntity obj) {
+                mHalfUseWaterRecord = obj;
+                handler.sendEmptyMessage(HANDLER_SUCCESS);
+            }
+        });
+    }
 }

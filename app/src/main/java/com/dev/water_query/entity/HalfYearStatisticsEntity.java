@@ -44,7 +44,7 @@ public class HalfYearStatisticsEntity {
     //目前金额
     private double waterLLeft;
     //按月份统计
-    private ArrayList<MonthRecord> mListMonthRecord = new ArrayList<MonthRecord>();
+    private ArrayList<MonthRecord> mListMonthRecord = null;
     private String monthlySt0;
     private String monthlySt1;
     private String monthlySt2;
@@ -172,6 +172,15 @@ public class HalfYearStatisticsEntity {
     }
 
     public ArrayList<MonthRecord> getListMonthRecord() {
+        if (mListMonthRecord == null) {
+            mListMonthRecord = new ArrayList<>();
+            setMonthlySt0(getMonthlySt0());
+            setMonthlySt1(getMonthlySt1());
+            setMonthlySt2(getMonthlySt2());
+            setMonthlySt3(getMonthlySt3());
+            setMonthlySt4(getMonthlySt4());
+            setMonthlySt5(getMonthlySt5());
+        }
         return mListMonthRecord;
     }
 

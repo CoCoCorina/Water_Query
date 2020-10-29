@@ -1,11 +1,18 @@
 package com.dev.water_query.activity;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+
+import com.dev.water_query.entity.HalfYearStatisticsEntity;
+import com.dev.water_query.network.CallBack;
+import com.dev.water_query.network.OkHttp3Util;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.MenuItem;
 
 import com.dev.water_query.R;
@@ -58,6 +65,28 @@ public class MainActivity extends AppCompatActivity {
      * @author: Juston
      */
     private void testMethod() {
+        String url = "http://zn.qlnuqianyun.cn/qlnuznsb/jsonTest/getInfoBySupplyNum.shtml?supplyNum=FYCJ001&flag=0";
+        OkHttp3Util.deserializeObjectFromHttpGet(url, HalfYearStatisticsEntity.class, new CallBack<HalfYearStatisticsEntity>() {
+            @Override
+            public void onFailure(String errorMsg) {
+                System.out.println(errorMsg);
+            }
+
+            @Override
+            public void onSuccess(HalfYearStatisticsEntity obj) {
+                for (HalfYearStatisticsEntity.MonthRecord record : obj.getListMonthRecord()) {
+                    String dateStr = record.getDate();
+                    String recordDateStr = record.getRecordDate();
+                    float leftWater = record.getLeftWater();
+                    float useWater = record.getMonthAccumulativeWater();
+                    float price = record.getPrice();
+                    float totalPrice = record.getTotalPrice();
+
+                    String prStr = String.format("date:%s recordDate:%s leftWater:%f useWater:%f price:%f totalPrice:%f", dateStr, recordDateStr, leftWater, useWater, price, totalPrice);
+                    System.out.println(prStr);
+                }
+            }
+        });
     }
 
     /**
