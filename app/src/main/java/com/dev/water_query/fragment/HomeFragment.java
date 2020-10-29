@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.dev.water_query.R;
 import com.dev.water_query.activity.BillDetailsActivity;
+import com.dev.water_query.activity.PayActivity;
 import com.dev.water_query.adapter.GridViewAdapter;
 import com.dev.water_query.adapter.ImagePagerAdapter;
 import com.dev.water_query.adapter.ViewPagerAdapter;
@@ -183,6 +184,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 switch (position) {
                     case 0:
                         startActivity(new Intent(getActivity(), BillDetailsActivity.class));
+                        break;
+                    case 1:
+                        startActivity(new Intent(getActivity(), PayActivity.class));
                         break;
                     default:
                         Toast.makeText(getActivity(), "hello service item " + position, Toast.LENGTH_SHORT).show();

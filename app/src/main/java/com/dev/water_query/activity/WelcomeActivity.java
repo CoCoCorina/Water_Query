@@ -49,7 +49,7 @@ public class WelcomeActivity extends AppCompatActivity implements View.OnClickLi
 
         initView();
         //在2秒后发送一个空信息通知handler
-        mGoHomeHandler.sendEmptyMessageDelayed(0, 2000);
+        mGoHomeHandler.sendEmptyMessageDelayed(0, 500);
     }
 
     /**

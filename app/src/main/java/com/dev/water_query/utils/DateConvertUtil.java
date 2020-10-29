@@ -47,4 +47,23 @@ public class DateConvertUtil {
         SimpleDateFormat df = new SimpleDateFormat(FORMAT_FULL);
         return df.format(date.getTime());
     }
+
+    /**
+     * @return 当前年月
+     * @method getYearMonth
+     * @description 获取当前年和月
+     * @date: 2020/10/29 17:09
+     * @author: Corina
+     */
+    public static String getYearMonth(){
+        String dateStringParse = null;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月");
+        try {
+            Date date = new Date();
+            dateStringParse = sdf.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dateStringParse;
+    }
 }
