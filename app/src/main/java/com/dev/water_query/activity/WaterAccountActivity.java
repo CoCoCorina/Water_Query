@@ -73,13 +73,13 @@ public class WaterAccountActivity extends AppCompatActivity {
         mBtnAccountMonitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // TODO: 2020/10/30  远程监测
             }
         });
         mBtnAccountUnbundling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // TODO: 2020/10/30 解绑水号 
             }
         });
     }
