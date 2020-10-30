@@ -1,8 +1,8 @@
 package com.dev.water_query.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,11 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.dev.water_query.R;
+import com.dev.water_query.activity.BillDetailsActivity;
+import com.dev.water_query.activity.PayActivity;
 import com.dev.water_query.adapter.GridViewAdapter;
 import com.dev.water_query.entity.GridViewEntity;
 
@@ -47,7 +51,7 @@ public class ServiceFragment extends Fragment {
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.service_fragment, container, false);
 
-        initView(inflater,container);
+        initView(inflater, container);
         initData();
         setListener();
 
@@ -119,7 +123,15 @@ public class ServiceFragment extends Fragment {
         mGridViewService.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(mContext, "你点击了~" + position + "~项", Toast.LENGTH_SHORT).show();
+                switch (position) {
+                    case 0:
+                        startActivity(new Intent(getActivity(), BillDetailsActivity.class));
+                        break;
+                    case 1:
+                        startActivity(new Intent(getActivity(), PayActivity.class));
+                        break;
+                    default:
+                }
             }
         });
 

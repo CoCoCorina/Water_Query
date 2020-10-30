@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.dev.water_query.R;
 import com.dev.water_query.activity.BillDetailsActivity;
 import com.dev.water_query.activity.PayActivity;
+import com.dev.water_query.activity.WaterAccountActivity;
 import com.dev.water_query.adapter.GridViewAdapter;
 import com.dev.water_query.adapter.ImagePagerAdapter;
 import com.dev.water_query.adapter.ViewPagerAdapter;
@@ -116,7 +117,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mListGridViewService = new ArrayList<GridViewEntity>();
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水费查询"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "我要交费"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "用水价格"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "我的水号"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "电子发票"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "停水降压通知"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水质水压公告"));
@@ -187,6 +188,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         break;
                     case 1:
                         startActivity(new Intent(getActivity(), PayActivity.class));
+                        break;
+                    case 2:
+                        startActivity(new Intent(getActivity(), WaterAccountActivity.class));
                         break;
                     default:
                         Toast.makeText(getActivity(), "hello service item " + position, Toast.LENGTH_SHORT).show();
