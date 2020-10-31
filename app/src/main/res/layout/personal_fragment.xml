@@ -40,7 +40,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ic_baseline_image_24"/>
+                        android:src="@drawable/ic_baseline_image_24" />
 
                     <LinearLayout
                         android:layout_width="200dp"
@@ -51,8 +51,8 @@
                             android:id="@+id/personal_supply_number"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:layout_marginTop="30dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="30dp"
                             android:gravity="left"
                             android:text="0000000"
                             android:textSize="30sp" />
@@ -75,44 +75,87 @@
                 <Button
                     android:id="@+id/q"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="#FFFFFF"
-                    android:drawableLeft="@drawable/ic_baseline_invert_colors_24"
-                    android:drawablePadding="5dp"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_water_services"
+                    android:drawablePadding="10dp"
                     android:gravity="center_vertical"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="20dp"
                     android:text="我的自来水"
-                    android:textSize="30sp" />
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/w"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_drinking_water"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="我的直饮水"
+
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/e"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_collection"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="我的收藏"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/r"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_praise"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="我的点赞"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/t"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_comment"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="我的评论"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/y"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_to_update"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="检查新版本"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
                 <Button
                     android:id="@+id/u"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp" />
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/ic_log_out"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20dp"
+                    android:text="退出登录"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
