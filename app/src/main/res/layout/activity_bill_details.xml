@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
@@ -68,7 +68,7 @@
             <ListView
                 android:id="@+id/listview_bill_details"
                 android:layout_width="match_parent"
-                android:layout_height="1450dp"
+                android:layout_height="1300dp"
                 android:layout_margin="20dp"
                 android:divider="@null"
                 android:dividerHeight="20dp" />
