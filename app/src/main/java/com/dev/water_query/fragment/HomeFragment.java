@@ -119,10 +119,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "我要交费"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "我的水号"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "电子发票"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "停水降压通知"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水质水压公告"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "停水通知"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水质公告"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "营业网点"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "直饮水服务"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "直饮水"));
 
         //通知栏
         mListNoticeEntities1 = new ArrayList<NoticeEntity>();

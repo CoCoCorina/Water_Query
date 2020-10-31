@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E8E8E8"
     tools:context=".activity.BillDetailsActivity">
 
     <ScrollView
@@ -36,9 +37,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:background="#E8E8E8">
+                android:background="@drawable/linearlayout_background_general">
 
                 <TextView
+
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -51,13 +53,14 @@
                 android:layout_height="230dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:background="#E8E8E8">
+                android:layout_marginRight="20dp">
 
                 <com.github.mikephil.charting.charts.BarChart
+                    android:padding="10dp"
                     android:id="@+id/chart_bill_use_water"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:background="@drawable/linearlayout_background_general" />
 
             </LinearLayout>
 
@@ -67,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1450dp"
                 android:layout_margin="20dp"
-                android:divider="@drawable/list_view_divider_white"
+                android:divider="@null"
                 android:dividerHeight="20dp" />
 
         </LinearLayout>

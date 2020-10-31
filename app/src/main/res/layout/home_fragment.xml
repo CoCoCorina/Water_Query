@@ -53,13 +53,13 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/linearlayout_background_general"
                 android:gravity="center_vertical">
 
                 <GridView
                     android:id="@+id/gridview_home_service_list"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:numColumns="4" />
 
             </LinearLayout>
@@ -70,12 +70,13 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:background="#FFFFFF">
+                android:background="@drawable/linearlayout_background_general">
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/vp_home_img_content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:background="@drawable/linearlayout_background_general" />
 
             </LinearLayout>
 
@@ -85,7 +86,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
-                android:background="#FFFFFF"
+                android:background="@drawable/linearlayout_background_general"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -166,12 +167,12 @@
                     android:background="#00BCD4" />
 
                 <androidx.viewpager.widget.ViewPager
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="10dp"
                     android:id="@+id/vp_home_notice_content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="10dp" />
 
             </LinearLayout>
         </LinearLayout>
