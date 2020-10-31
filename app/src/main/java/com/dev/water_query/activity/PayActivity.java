@@ -19,7 +19,8 @@ import com.dev.water_query.utils.SharedPreferencesUtil;
  * @date: 2020/10/29 14:52
  */
 public class PayActivity extends AppCompatActivity {
-    private TextView mPaySupplyNumber, mPayDate, mPayCurrentBalance, mPayLiquidatedDamages, mPayName, mPayPopulationBase, mPayAddress;
+    private TextView mPaySupplyNumber, mPayDate, mPayCurrentBalance, mPayLiquidatedDamages,
+            mPayName, mPayPopulationBase, mPayAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class PayActivity extends AppCompatActivity {
         mPayDate.setText(DateConvertUtil.getYearMonth());
 
         mPayCurrentBalance.setText("当前余额：" + "0" + " 元");
-        mPayLiquidatedDamages.append("0"+" 元");
+        mPayLiquidatedDamages.append("0" + " 元");
         mPayName.setText("户主姓名：" + "小明");
         mPayPopulationBase.setText("人口基数：" + "4");
         mPayAddress.setText("用水地址：" + "解放路4****楼3单元302室");

@@ -68,29 +68,29 @@ public class ServiceFragment extends Fragment {
         mContext = getActivity();
 
         ArrayList<GridViewEntity> mGridViewServiceList = new ArrayList<>();
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水费查询"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "我要交费"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "用水价格"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "电子发票"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "停水降压通知"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水质水压公告"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "营业网点"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "直饮水服务"));
-        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "供水服务热线"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_query, "水费查询"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_water_fee, "我要交费"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_price, "用水价格"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_invoice, "电子发票"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_notification, "停水降压通知"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_announcement, "水质水压公告"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_business_outlets, "营业网点"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_water_dispenser, "直饮水服务"));
+        mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_customer_service, "供水服务热线"));
 
         ArrayList<GridViewEntity> mGridViewHandleList = new ArrayList<>();
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水表报装"));
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "户表改造"));
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "户表调价"));
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "多人口签续约"));
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "竣工验收"));
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "更名过户"));
-        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "互联网督查"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_report, "水表报装"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_reform, "户表改造"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_modify_price, "户表调价"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_renewal, "多人口签续约"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_check, "竣工验收"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_transfer, "更名过户"));
+        mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_inspection, "互联网督查"));
 
         ArrayList<GridViewEntity> mGridViewTipsList = new ArrayList<>();
-        mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "常见问题"));
-        mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "法律法规"));
-        mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "业务指南"));
+        mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_problem, "常见问题"));
+        mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_laws, "法律法规"));
+        mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_guide, "业务指南"));
 
         BaseAdapter mAdapterService = new GridViewAdapter<GridViewEntity>(mGridViewServiceList, R.layout.gridview_icon) {
             @Override

@@ -31,9 +31,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:drawableLeft="@drawable/ic_baseline_image_24"
+                    android:layout_marginLeft="15dp"
+                    android:drawableLeft="@drawable/ic_water_services"
                     android:gravity="center_vertical"
                     android:text="用水服务"
+                    android:textColor="#000"
                     android:textSize="20sp" />
 
                 <View
@@ -61,9 +63,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:drawableLeft="@drawable/ic_baseline_image_24"
+                    android:layout_marginLeft="15dp"
+                    android:drawableLeft="@drawable/ic_business_management"
                     android:gravity="center_vertical"
                     android:text="业务办理"
+                    android:textColor="#000"
                     android:textSize="20sp" />
 
                 <View
@@ -92,9 +96,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:drawableLeft="@drawable/ic_baseline_image_24"
+                    android:layout_marginLeft="15dp"
+                    android:drawableLeft="@drawable/ic_common_sense"
                     android:gravity="center_vertical"
                     android:text="用水常识"
+                    android:textColor="#000"
                     android:textSize="20sp" />
 
                 <View
