@@ -115,14 +115,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         //服务列表
         mListGridViewService = new ArrayList<GridViewEntity>();
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水费查询"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_apps_24, "我要交费"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "我的水号"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "电子发票"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "停水降压通知"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "水质水压公告"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "营业网点"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_baseline_chat_24, "直饮水服务"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_query, "水费查询"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_water_fee, "我要交费"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_my_info, "我的水号"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_reform, "户表改造"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_modify_price, "户表调价"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_renewal, "多人口签续约"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_water_dispenser, "直饮水服务"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_all_service, "查看全部"));
 
         //通知栏
         mListNoticeEntities1 = new ArrayList<NoticeEntity>();
