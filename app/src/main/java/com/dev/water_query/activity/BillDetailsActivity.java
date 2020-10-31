@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class BillDetailsActivity extends AppCompatActivity {
