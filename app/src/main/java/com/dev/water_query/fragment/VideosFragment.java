@@ -25,10 +25,15 @@ import java.util.ArrayList;
  */
 public class VideosFragment extends Fragment implements View.OnClickListener {
 
+    //View
     private View mRootView;
     private TextView mBtnLive, mBtnTips, mBtnCulture;
-    private ViewPagerAdapter mAdapterVideoPager;
     private ViewPager mVpVideoContent;
+
+    //adapter
+    private ViewPagerAdapter mAdapterVideoPager;
+
+    //data
     private ArrayList<Fragment> mListVideoFragments;
     private ArrayList<NoticeEntity> mListVideoEntities1, mListVideoEntities2, mListVideoEntities3;
 
@@ -48,6 +53,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
         return mRootView;
     }
 
+    //初始化数据
     private void initData() {
         mListVideoFragments = new ArrayList<Fragment>();
         mListVideoFragments.add(new VideoListFragment(mListVideoEntities1,getActivity()));
@@ -55,16 +61,19 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
         mListVideoFragments.add(new VideoListFragment(mListVideoEntities3, getActivity()));
     }
 
+    //初始化视图
     private void initView(LayoutInflater inflater, ViewGroup container) {
         mBtnLive = mRootView.findViewById(R.id.btn_live);
         mBtnTips = mRootView.findViewById(R.id.btn_tips);
         mBtnCulture = mRootView.findViewById(R.id.btn_culture);
         mVpVideoContent = mRootView.findViewById(R.id.vp_video_content);
 
+        //初始化并设置适配器
         mAdapterVideoPager = new ViewPagerAdapter(mListVideoFragments, getActivity().getSupportFragmentManager());
         mVpVideoContent.setAdapter(mAdapterVideoPager);
     }
 
+    //设置监听事件
     private void setListener() {
         mBtnLive.setOnClickListener(this);
         mBtnTips.setOnClickListener(this);
@@ -99,6 +108,7 @@ public class VideosFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        //被选中的项的文字颜色修改为0xFFFFFFFF，背景为0xFF00BCD4。其他文字颜色为0xFFFFFFFF，背景为0xFF000000
         switch (v.getId()) {
             case R.id.btn_live:
                 mBtnLive.setTextColor(0xFFFFFFFF);

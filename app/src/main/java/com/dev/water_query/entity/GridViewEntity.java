@@ -20,19 +20,19 @@ public class GridViewEntity {
         this.iName = iName;
     }
 
-    public int getiId() {
+    public int getId() {
         return iId;
     }
 
-    public String getiName() {
+    public String getName() {
         return iName;
     }
 
-    public void setiId(int iId) {
+    public void setId(int iId) {
         this.iId = iId;
     }
 
-    public void setiName(String iName) {
+    public void setName(String iName) {
         this.iName = iName;
     }
 }

@@ -25,7 +25,7 @@ public class NoticeFragment extends Fragment {
     //通知实体集合
     private ArrayList<NoticeEntity> mListNoticeEntities;
 
-    //adapter
+    //Adapter
     private NoticeAdapter mAdapterNoticeList;
 
     //View
@@ -41,9 +41,9 @@ public class NoticeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("onCreate");
     }
 
+    //创建视图回调函数
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -56,6 +56,7 @@ public class NoticeFragment extends Fragment {
         return mRootView;
     }
 
+    //初始化视图
     private void initView() {
         //初始化view
         mListViewNotice = mRootView.findViewById(R.id.listview_notice);
@@ -66,6 +67,7 @@ public class NoticeFragment extends Fragment {
         mListViewNotice.setAdapter(mAdapterNoticeList);
     }
 
+    //设置监听事件
     private void setListener() {
         mBtnLookMore.setOnClickListener(new View.OnClickListener() {
             @Override

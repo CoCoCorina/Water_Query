@@ -1,6 +1,5 @@
 package com.dev.water_query.entity;
 
-import androidx.annotation.LongDef;
 import android.util.Log;
 
 import com.dev.water_query.utils.DateConvertUtil;
@@ -144,7 +143,6 @@ public class DateTimeEntitiy {
         try {
             Date date = DateConvertUtil.timeStampToDate(time);
             String yearStr = DateConvertUtil.getDateTimeString(date).substring(0, 4);
-            Log.d("Juston", "getYear: " + DateConvertUtil.getDateTimeString(date));
             return Integer.parseInt(yearStr);
         } catch (ParseException e) {
             Log.d("WaterQuery", "setTime Error Msg :" + e.getMessage());

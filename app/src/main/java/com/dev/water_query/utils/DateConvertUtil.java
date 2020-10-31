@@ -55,7 +55,7 @@ public class DateConvertUtil {
      * @date: 2020/10/29 17:09
      * @author: Corina
      */
-    public static String getYearMonth(){
+    public static String getNowYearMonth(){
         String dateStringParse = null;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月");
         try {

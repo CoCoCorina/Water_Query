@@ -27,6 +27,7 @@ public class HalfYearStatisticsEntity {
      */
 
     private static final int REQUEST_SUCCESS = 200;
+    
     //状态码
     private int status;
     //查询状态字符串
@@ -43,6 +44,7 @@ public class HalfYearStatisticsEntity {
     private double moneyLeft;
     //目前金额
     private double waterLLeft;
+
     //按月份统计
     private ArrayList<MonthRecord> mListMonthRecord = null;
     private String monthlySt0;
@@ -122,6 +124,8 @@ public class HalfYearStatisticsEntity {
     }
 
     public void setMonthlySt0(String monthlySt0) {
+        //在赋值的同时，新创建一个MOnthRecord记录并添加到mListMonthRecord中
+        //下同
         this.monthlySt0 = monthlySt0;
         mListMonthRecord.add(new MonthRecord(monthlySt0));
     }
@@ -171,7 +175,9 @@ public class HalfYearStatisticsEntity {
         mListMonthRecord.add(new MonthRecord(monthlySt5));
     }
 
+    //获取月记录
     public ArrayList<MonthRecord> getListMonthRecord() {
+        //因为直接json反序列化直接用的反射，不是用set访问器赋值，没法初始化MonthRecord 所以这里要单独初始化一次  见Line125
         if (mListMonthRecord == null) {
             mListMonthRecord = new ArrayList<>();
             setMonthlySt0(getMonthlySt0());
@@ -186,12 +192,19 @@ public class HalfYearStatisticsEntity {
 
     public static class MonthRecord {
         public MonthRecord(String str) {
+            //以逗号为分隔符
             String[] arr = str.split(",");
+            //月份
             mDate = arr[0];
+            //单价
             mPrice = Float.parseFloat(arr[1]);
+            //缴费前的用水量
             mLeftWater = Float.parseFloat(arr[2]);
+            //月累计使用水
             mMonthAccumulativeWater = Float.parseFloat(arr[3]);
+            //总价格
             mTotalPrice = Float.parseFloat(arr[4]);
+            //记录日期
             mRecordDate = arr[5];
         }
 

@@ -7,10 +7,8 @@ import java.lang.reflect.Type;
 
 import okhttp3.Call;
 import okhttp3.Callback;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 /**
@@ -22,51 +20,6 @@ import okhttp3.Response;
  * @date: 2020/10/28 15:57
  */
 public class OkHttp3Util {
-
-    /**
-     * get请求
-     *
-     * @param url
-     * @return result
-     */
-    public static String httpGet(String url) {
-        String result = null;
-        OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url(url)
-                .get()
-                .build();
-        try {
-            Response response = client.newCall(request).execute();
-            result = response.body().string();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    /**
-     * post请求
-     *
-     * @param url
-     * @param data 提交的参数为key=value&key1=value1的形式
-     */
-    public static String httpPost(String url, String data) {
-        String result = null;
-        OkHttpClient httpClient = new OkHttpClient();
-        RequestBody requestBody = RequestBody.create(MediaType.parse("text/html;charset=utf-8"), data);
-        Request request = new Request.Builder()
-                .url(url)
-                .post(requestBody)
-                .build();
-        try {
-            Response response = httpClient.newCall(request).execute();
-            result = response.body().string();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
 
     /**
      * @param url      请求的地址
@@ -104,5 +57,6 @@ public class OkHttp3Util {
                 }
             }
         });
+
     }
 }

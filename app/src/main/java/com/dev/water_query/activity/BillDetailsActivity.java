@@ -24,15 +24,21 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import java.util.ArrayList;
 
 public class BillDetailsActivity extends AppCompatActivity {
+
     private static final int HANDLER_SUCCESS = 0, HANDLER_FAILURE = 1;
 
+    //账单详情
     private ListView mListViewBillDetails;
     private BarChart mBarChartUseWater;
+
+    //适配器
     private BillDetailAdapter mAdapterBillDetail;
 
+    //数据
     private volatile HalfYearStatisticsEntity mHalfUseWaterRecord;
     private ArrayList<IBarDataSet> mDataSets;
 
+    //接受从子线程发来的信息，用来操控主线程的控件
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
@@ -54,7 +60,7 @@ public class BillDetailsActivity extends AppCompatActivity {
         getDataInInternet();
     }
 
-    //initView
+    //初始化视图
     private void initView() {
         mListViewBillDetails = findViewById(R.id.listview_bill_details);
         mBarChartUseWater = findViewById(R.id.chart_bill_use_water);
@@ -73,27 +79,35 @@ public class BillDetailsActivity extends AppCompatActivity {
         mListViewBillDetails.setAdapter(mAdapterBillDetail);
     }
 
+    //展示数据
     private void showData() {
         //初始化数据集
         ArrayList<BarEntry> values = new ArrayList<>();
+
         int i = 0;
         for (HalfYearStatisticsEntity.MonthRecord record : mHalfUseWaterRecord.getListMonthRecord()) {
             float useWater = record.getMonthAccumulativeWater();
             values.add(new BarEntry(i++, useWater));
         }
+
         mDataSets = new ArrayList<>();
+
         //将数据集添加到dataset中
         mDataSets.add(new BarDataSet(values, "用水量"));
     }
 
+    //设置监听事件
     private void setListener() {
     }
 
+    //从网络上获取数据
     private void getDataInInternet() {
+        //从网络上请求数据
         String url = "http://zn.qlnuqianyun.cn/qlnuznsb/jsonTest/getInfoBySupplyNum.shtml?supplyNum=FYCJ001&flag=0";
         OkHttp3Util.deserializeObjectFromHttpGet(url, HalfYearStatisticsEntity.class, new CallBack<HalfYearStatisticsEntity>() {
             @Override
             public void onFailure(String errorMsg) {
+                //请求失败 通过handler向主线程发送信息
                 Message msg = new Message();
                 msg.what = HANDLER_FAILURE;
                 msg.obj = errorMsg;
@@ -102,6 +116,7 @@ public class BillDetailsActivity extends AppCompatActivity {
 
             @Override
             public void onSuccess(HalfYearStatisticsEntity obj) {
+                //请求成功 将请求到的实体赋值 并通过handler通知主线程
                 mHalfUseWaterRecord = obj;
                 handler.sendEmptyMessage(HANDLER_SUCCESS);
             }

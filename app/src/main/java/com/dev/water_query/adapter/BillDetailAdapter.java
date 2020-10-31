@@ -46,11 +46,15 @@ public class BillDetailAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        //视图持有者
         ViewHolder vh;
-        if (convertView == null) {
-            vh = new ViewHolder();
-            convertView = LayoutInflater.from(mConext).inflate(R.layout.item_bill_detail, null);
 
+        if (convertView == null) {
+            //新创建个视图持有者
+            vh = new ViewHolder();
+
+            //初始化视图
+            convertView = LayoutInflater.from(mConext).inflate(R.layout.item_bill_detail, null);
             vh.txtBillDetailMonth = convertView.findViewById(R.id.txt_item_bill_detail_month);
             vh.txtBillDetailYear = convertView.findViewById(R.id.txt_item_bill_detail_year);
             vh.txtBillDetailPrice = convertView.findViewById(R.id.txt_item_bill_detail_price);
@@ -59,11 +63,14 @@ public class BillDetailAdapter extends BaseAdapter {
             vh.txtBillDetailLeftWater = convertView.findViewById(R.id.txt_item_bill_detail_water_left);
             vh.txtBillDetailRecordDate = convertView.findViewById(R.id.txt_item_bill_detail_record_date);
 
+            //将视图持有者设置为视图的tag
             convertView.setTag(vh);
         } else {
+            //直接从tag中获得视图持有者
             vh = (ViewHolder) convertView.getTag();
         }
 
+        //显示数据
         HalfYearStatisticsEntity.MonthRecord monthRecord = mListBillDetail.get(position);
         String[] datearr = monthRecord.getDate().split("-");
         vh.txtBillDetailYear.setText("/" + datearr[0]);
@@ -77,6 +84,7 @@ public class BillDetailAdapter extends BaseAdapter {
         return convertView;
     }
 
+    //视图持有者
     class ViewHolder {
         public TextView txtBillDetailPrice, txtBillDetailTotalPrice, txtBillDetailUseWater;
         public TextView txtBillDetailLeftWater, txtBillDetailMonth, txtBillDetailYear, txtBillDetailRecordDate;

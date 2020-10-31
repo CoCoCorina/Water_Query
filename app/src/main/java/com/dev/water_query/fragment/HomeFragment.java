@@ -26,8 +26,17 @@ import com.dev.water_query.entity.NoticeEntity;
 
 import java.util.ArrayList;
 
+/**
+ * @version v1.0
+ * @ClassName: HomeFragment
+ * Description: 主界面Fragment
+ * @author: Juston
+ * @date: 2020/10/31 19:02
+ */
+
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
+    //根视图
     private View mRootView;
 
     //上方的服务项
@@ -63,6 +72,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
     }
 
+    //创建视图和回调函数
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -76,6 +86,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         return mRootView;
     }
 
+    //初始化视图
     public void initView(LayoutInflater inflater, ViewGroup container) {
 
         //初始化轮播图
@@ -89,8 +100,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mAdapterGridViewService = new GridViewAdapter<GridViewEntity>(mListGridViewService, R.layout.gridview_icon) {
             @Override
             public void bindView(ViewHolder holder, GridViewEntity obj) {
-                holder.setImageResource(R.id.img_icon, obj.getiId());
-                holder.setText(R.id.txt_icon, obj.getiName());
+                holder.setImageResource(R.id.img_icon, obj.getId());
+                holder.setText(R.id.txt_icon, obj.getName());
             }
         };
         mGridViewService.setAdapter(mAdapterGridViewService);
@@ -106,6 +117,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mVpNoticeContent.setOffscreenPageLimit(3);
     }
 
+    //初始化数据
     public void initData() {
         //轮播图
         mListImgId = new ArrayList<Integer>();
@@ -120,8 +132,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_my_info, "我的水号"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_reform, "户表改造"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_modify_price, "户表调价"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_renewal, "多人口签续约"));
-        mListGridViewService.add(new GridViewEntity(R.drawable.ic_water_dispenser, "直饮水服务"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_renewal, "多人签续"));
+        mListGridViewService.add(new GridViewEntity(R.drawable.ic_water_dispenser, "直饮水"));
         mListGridViewService.add(new GridViewEntity(R.drawable.ic_all_service, "查看全部"));
 
         //通知栏
@@ -149,6 +161,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mListNoticeFragments.add(new NoticeFragment(mListNoticeEntities3, getActivity()));
     }
 
+    //设置监听事件
     private void setListener() {
         mBtnNotice1.setOnClickListener(this);
         mBtnNotice2.setOnClickListener(this);
@@ -157,9 +170,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mVpNoticeContent.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i1) {
-
             }
 
+            //页面被选择的回调函数
             @Override
             public void onPageSelected(int i) {
                 View id;
@@ -175,10 +188,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             @Override
             public void onPageScrollStateChanged(int i) {
-
             }
         });
 
+        //设置当项被点击时的回调函数
         mGridViewService.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

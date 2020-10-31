@@ -19,9 +19,7 @@
             android:text="我的水号"
             android:textColor="#FFFFFF"
             android:textSize="30sp" />
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,15 +34,15 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/account_supply_number"
-                android:layout_width="match_parent"
+                android:id="@+id/txt_account_supply_number"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="25dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical|left"
-                android:text="给水号："
+                android:text="给水号：20188844"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
-
 
         </LinearLayout>
 
@@ -54,60 +52,137 @@
             android:background="@drawable/linearlayout_backgroud_bottom_fillet_shadow"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/account_name"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="户主姓名："
-                android:textColor="#000"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/account_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="水表信息："
-                android:textColor="#000"
-                android:textSize="18sp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.7"
+                    android:text="户主姓名："
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/account_code"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="抄表编码："
-                android:textColor="#000"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/txt_account_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="张滔滔"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/account_delegate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:text="客户代表："
-                android:textColor="#000"
-                android:textSize="18sp" />
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/account_fee"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:text="应交水费："
-                android:textColor="#000"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.7"
+                    android:text="水表信息："
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_account_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="王舍人街道"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.7"
+                    android:text="抄表代码："
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_account_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="05-132-1645"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.7"
+                    android:text="客户代表："
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_account_delegate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="朱振亿（18282192390）"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.7"
+                    android:text="应交水费："
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txt_account_fee"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="12.4元"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -126,7 +201,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#cccccc"
+                    android:background="#D7D7D7"
                     android:gravity="center"
                     android:text="水费查询"
                     android:textColor="#000"
@@ -137,14 +212,14 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#cccccc"
+                    android:background="#D7D7D7"
                     android:gravity="center"
                     android:text="远程监测"
                     android:textColor="#000"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/btn_account_unbundling"
+                    android:id="@+id/btn_account_unbind"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -161,8 +236,11 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
         android:layout_marginTop="30dp"
+        android:background="#15BAEC"
         android:text="绑定给水号"
-        android:textColor="#000"
-        android:textSize="18sp" />
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
 </LinearLayout>

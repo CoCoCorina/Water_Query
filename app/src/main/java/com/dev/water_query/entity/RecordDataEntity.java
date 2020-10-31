@@ -9,7 +9,6 @@ import java.util.List;
 
 public class RecordDataEntity {
 
-
     private List<SssBean> sss;
 
     public List<SssBean> getSss() {

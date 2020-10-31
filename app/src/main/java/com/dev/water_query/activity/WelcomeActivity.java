@@ -25,6 +25,7 @@ import com.dev.water_query.utils.SharedPreferencesUtil;
 
 public class WelcomeActivity extends AppCompatActivity implements View.OnClickListener {
 
+    //View
     private EditText mEditSupplyNumber;
     private Button mBtnSubmitSupplyNumber;
 

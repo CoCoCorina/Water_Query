@@ -33,31 +33,33 @@ public class WaterAccountActivity extends AppCompatActivity {
         setListener();
     }
 
+    //初始化视图
     private void initView() {
-        mAccountSupplyNumber = findViewById(R.id.account_supply_number);
-        mAccountName = findViewById(R.id.account_name);
-        mAccountInfo = findViewById(R.id.account_info);
-        mAccountCode = findViewById(R.id.account_code);
-        mAccountDelegate = findViewById(R.id.account_delegate);
-        mAccountFee = findViewById(R.id.account_fee);
+        mAccountSupplyNumber = findViewById(R.id.txt_account_supply_number);
+        mAccountName = findViewById(R.id.txt_account_name);
+        mAccountInfo = findViewById(R.id.txt_account_info);
+        mAccountCode = findViewById(R.id.txt_account_code);
+        mAccountDelegate = findViewById(R.id.txt_account_delegate);
+        mAccountFee = findViewById(R.id.txt_account_fee);
         mBtnAccountPay = findViewById(R.id.btn_account_pay);
         mBtnAccountQuery = findViewById(R.id.btn_account_query);
         mBtnAccountMonitor = findViewById(R.id.btn_account_monitor);
-        mBtnAccountUnbundling = findViewById(R.id.btn_account_unbundling);
+        mBtnAccountUnbundling = findViewById(R.id.btn_account_unbind);
     }
 
 
+    //初始化数据
     private void initData() {
-        mAccountSupplyNumber.append("1032900");
-        mAccountName.append("王*明");
-        mAccountInfo.append("江西三川");
-        mAccountCode.append("04-126-125");
-        mAccountDelegate.append("王小明(19809877890)");
-        mAccountFee.append("0" + "元");
+        mAccountSupplyNumber.setText("1032900");
+        mAccountName.setText("王*明");
+        mAccountInfo.setText("江西三川");
+        mAccountCode.setText("04-126-125");
+        mAccountDelegate.setText("王小明(19809877890)");
+        mAccountFee.setText("0" + "元");
     }
 
+    //设置监听事件
     private void setListener() {
-
         mBtnAccountPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

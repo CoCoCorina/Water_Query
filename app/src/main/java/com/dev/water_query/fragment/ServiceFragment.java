@@ -30,12 +30,12 @@ import java.util.ArrayList;
  * @date: 2020/10/20 16:29
  */
 public class ServiceFragment extends Fragment {
+    //View
     private View mRootView;
-    private Context mContext;
     private GridView mGridViewService, mGridViewHandle, mGridViewTips;
 
-    public ServiceFragment() {
-    }
+    //Context
+    private Context mContext;
 
     public static Fragment newInstance() {
         return new ServiceFragment();
@@ -58,15 +58,18 @@ public class ServiceFragment extends Fragment {
         return mRootView;
     }
 
+    //初始化视图
     private void initView(LayoutInflater inflater, ViewGroup container) {
         mGridViewService = mRootView.findViewById(R.id.service_gridview_service);
         mGridViewHandle = mRootView.findViewById(R.id.service_gridview_handle);
         mGridViewTips = mRootView.findViewById(R.id.service_gridview_tips);
     }
 
+    //初始化数据
     private void initData() {
         mContext = getActivity();
 
+        //初始化服务列表数据
         ArrayList<GridViewEntity> mGridViewServiceList = new ArrayList<>();
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_query, "水费查询"));
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_water_fee, "我要交费"));
@@ -78,6 +81,7 @@ public class ServiceFragment extends Fragment {
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_water_dispenser, "直饮水服务"));
         mGridViewServiceList.add(new GridViewEntity(R.drawable.ic_customer_service, "供水服务热线"));
 
+        //初始化处理列表数据
         ArrayList<GridViewEntity> mGridViewHandleList = new ArrayList<>();
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_report, "水表报装"));
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_reform, "户表改造"));
@@ -87,38 +91,42 @@ public class ServiceFragment extends Fragment {
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_transfer, "更名过户"));
         mGridViewHandleList.add(new GridViewEntity(R.drawable.ic_inspection, "互联网督查"));
 
+        //初始化贴士列表数据
         ArrayList<GridViewEntity> mGridViewTipsList = new ArrayList<>();
         mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_problem, "常见问题"));
         mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_laws, "法律法规"));
         mGridViewTipsList.add(new GridViewEntity(R.drawable.ic_guide, "业务指南"));
 
+        //初始化服务适配器
         BaseAdapter mAdapterService = new GridViewAdapter<GridViewEntity>(mGridViewServiceList, R.layout.gridview_icon) {
             @Override
             public void bindView(ViewHolder holder, GridViewEntity obj) {
-                holder.setImageResource(R.id.img_icon, obj.getiId());
-                holder.setText(R.id.txt_icon, obj.getiName());
+                holder.setImageResource(R.id.img_icon, obj.getId());
+                holder.setText(R.id.txt_icon, obj.getName());
             }
         };
         BaseAdapter mAdapterHandle = new GridViewAdapter<GridViewEntity>(mGridViewHandleList, R.layout.gridview_icon) {
             @Override
             public void bindView(ViewHolder holder, GridViewEntity obj) {
-                holder.setImageResource(R.id.img_icon, obj.getiId());
-                holder.setText(R.id.txt_icon, obj.getiName());
+                holder.setImageResource(R.id.img_icon, obj.getId());
+                holder.setText(R.id.txt_icon, obj.getName());
             }
         };
         BaseAdapter mAdapterTips = new GridViewAdapter<GridViewEntity>(mGridViewTipsList, R.layout.gridview_icon) {
             @Override
             public void bindView(ViewHolder holder, GridViewEntity obj) {
-                holder.setImageResource(R.id.img_icon, obj.getiId());
-                holder.setText(R.id.txt_icon, obj.getiName());
+                holder.setImageResource(R.id.img_icon, obj.getId());
+                holder.setText(R.id.txt_icon, obj.getName());
             }
         };
 
+        //为GridView设置适配器
         mGridViewService.setAdapter(mAdapterService);
         mGridViewHandle.setAdapter(mAdapterHandle);
         mGridViewTips.setAdapter(mAdapterTips);
     }
 
+    //设置监听
     private void setListener() {
         mGridViewService.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

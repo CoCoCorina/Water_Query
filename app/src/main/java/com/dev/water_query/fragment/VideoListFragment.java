@@ -1,15 +1,14 @@
 package com.dev.water_query.fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ListView;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.dev.water_query.R;
 import com.dev.water_query.adapter.VideoListAdapter;
@@ -28,16 +27,14 @@ import java.util.ArrayList;
  */
 public class VideoListFragment extends Fragment {
 
+    //View
     private View mRootView;
     ListView videoList;
+
+    //Adapter
     VideoListAdapter listNormalAdapter;
 
-    public VideoListFragment() {
-
-    }
-
-    public VideoListFragment(ArrayList<NoticeEntity> mListVideoEntities3, FragmentActivity activity) {
-
+    public VideoListFragment(ArrayList<NoticeEntity> mListVideoEntities1, FragmentActivity activity) {
     }
 
     @Override
@@ -45,23 +42,25 @@ public class VideoListFragment extends Fragment {
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_video_list, container, false);
 
-        initView(inflater,container);
+        initView(inflater, container);
         initData();
         setListener();
 
         return mRootView;
     }
 
-
+    //初始化数据
     private void initData() {
         listNormalAdapter = new VideoListAdapter(getContext());
         videoList.setAdapter(listNormalAdapter);
     }
 
+    //初始化视图
     private void initView(LayoutInflater inflater, ViewGroup container) {
         videoList = mRootView.findViewById(R.id.video_list);
     }
 
+    //设置监听
     private void setListener() {
         videoList.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
@@ -78,7 +77,7 @@ public class VideoListFragment extends Fragment {
                     //对应的播放列表TAG
                     if (GSYVideoManager.instance().getPlayTag().equals(VideoListAdapter.TAG)
                             && (position < firstVisibleItem || position > lastVisibleItem)) {
-                        if(GSYVideoManager.isFullState(getActivity())) {
+                        if (GSYVideoManager.isFullState(getActivity())) {
                             return;
                         }
                         //如果滑出去了上面和下面就是否，和今日头条一样

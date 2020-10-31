@@ -31,33 +31,26 @@ public class PayActivity extends AppCompatActivity {
         initData();
     }
 
-    @SuppressLint("SetTextI18n")
+    //初始化数据
     private void initData() {
         mPaySupplyNumber.setText("给水号: " + SharedPreferencesUtil.getSupplyNumber(this));
-        mPayDate.setText(DateConvertUtil.getYearMonth());
+        mPayDate.setText(DateConvertUtil.getNowYearMonth());
 
-        mPayCurrentBalance.setText("当前余额：" + "0" + " 元");
-        mPayLiquidatedDamages.append("0" + " 元");
-        mPayName.setText("户主姓名：" + "小明");
-        mPayPopulationBase.setText("人口基数：" + "4");
-        mPayAddress.setText("用水地址：" + "解放路4****楼3单元302室");
-
+//        mPayCurrentBalance.setText("0" + " 元");
+//        mPayLiquidatedDamages.append("0" + " 元");
+//        mPayName.setText("小明");
+//        mPayPopulationBase.setText("4");
+//        mPayAddress.setText("解放路4****楼3单元302室");
     }
 
+    //初始化视图
     private void initView() {
-
-        mPaySupplyNumber = findViewById(R.id.pay_supply_number);
-        mPayDate = findViewById(R.id.pay_date);
-        mPayCurrentBalance = findViewById(R.id.pay_current_balance);
-        mPayLiquidatedDamages = findViewById(R.id.pay_liquidated_damages);
-        mPayName = findViewById(R.id.pay_name);
-        mPayPopulationBase = findViewById(R.id.pay_population_base);
-        mPayAddress = findViewById(R.id.pay_address);
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
+        mPaySupplyNumber = findViewById(R.id.txt_pay_supply_number);
+        mPayDate = findViewById(R.id.txt_pay_date);
+        mPayCurrentBalance = findViewById(R.id.txt_pay_current_money);
+        mPayLiquidatedDamages = findViewById(R.id.txt_pay_liquidated_damages);
+        mPayName = findViewById(R.id.txt_pay_name);
+        mPayPopulationBase = findViewById(R.id.txt_pay_population_base);
+        mPayAddress = findViewById(R.id.txt_pay_address);
     }
 }

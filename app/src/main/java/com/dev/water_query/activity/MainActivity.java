@@ -35,10 +35,15 @@ import java.util.ArrayList;
  */
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<Fragment> mListFragments;
+    //View
     private BottomNavigationView mBottomNavigation;
     private ViewPager mVpContent;
+
+    //adapter
     private ViewPagerAdapter mVpContentAdapter;
+
+    //data
+    private ArrayList<Fragment> mListFragments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
      * @author: Juston
      */
     private void initData() {
+        //初始化五个Fragment
         mListFragments = new ArrayList<Fragment>();
 
         mListFragments.add(HomeFragment.newInstance());

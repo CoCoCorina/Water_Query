@@ -67,13 +67,20 @@ public class VideoListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        //视图持有者
         final ViewHolder holder;
+
         if (convertView == null) {
+            //初始化视图持有者
             holder = new ViewHolder();
+
             convertView = inflater.inflate(R.layout.list_video_simple_mode1, null);
             holder.gsyVideoPlayer = (VideoCoverUtil) convertView.findViewById(R.id.video_item_player);
+
+            //将视图持有者设置为视图的tag
             convertView.setTag(holder);
         } else {
+            //直接从视图的tag中获取视图持有者
             holder = (ViewHolder) convertView.getTag();
         }
 
@@ -112,8 +119,8 @@ public class VideoListAdapter extends BaseAdapter {
         //小屏时不触摸滑动
         holder.gsyVideoPlayer.setIsTouchWiget(false);
         //全屏是否需要lock功能
-        return convertView;
 
+        return convertView;
     }
 
     class ViewHolder {
